@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   nml_mat_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 22:09:13 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/26 22:21:56 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/03/28 21:59:58 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
+/// @brief Print matrix on the terminal
+/// @param matrix
 void	nml_mat_print(t_nml_mat *matrix)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;
@@ -26,6 +28,7 @@ void	nml_mat_print(t_nml_mat *matrix)
 		while (j < matrix->cols)
 		{
 			printf("%lf\t\t", matrix->data[i][j]);
+			j++;
 		}
 		printf("\n");
 		i++;

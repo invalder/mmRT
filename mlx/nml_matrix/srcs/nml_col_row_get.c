@@ -3,15 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   nml_col_row_get.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 22:24:07 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/26 22:35:59 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/03/27 21:13:51 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
+/// @brief Get value from matrix[i][j]
+/// @param matrix
+/// @param i
+/// @param j
+/// @return
+float	nml_mat_get(t_nml_mat *matrix, unsigned int i, unsigned int j)
+{
+	return (matrix->data[i][j]);
+}
+
+/// @brief Get one column from matrix m
+/// @param m matrix
+/// @param col number of column start from 0
+/// @return
 t_nml_mat	*nml_mat_col_get(t_nml_mat *m, unsigned int col)
 {
 	t_nml_mat		*r;
@@ -20,7 +34,7 @@ t_nml_mat	*nml_mat_col_get(t_nml_mat *m, unsigned int col)
 	j = 0;
 	if (col >= m->cols)
 		return (nml_error(__FILE__, __LINE__, "CANNOT_GET_COLUMN"), NULL);
-	r = nml_mat_new(m->num_rows, 1);
+	r = nml_mat_new(m->rows, 1);
 	while (j < r->rows)
 	{
 		r->data[j][0] = m->data[j][col];
@@ -29,11 +43,15 @@ t_nml_mat	*nml_mat_col_get(t_nml_mat *m, unsigned int col)
 	return (r);
 }
 
+/// @brief Get one row from matrix m
+/// @param m matrix
+/// @param row number of row start from 0
+/// @return
 t_nml_mat	*nml_mat_row_get(t_nml_mat *m, unsigned int row)
 {
 	t_nml_mat		*r;
 
-	if (col >= m->rows)
+	if (row >= m->rows)
 		return (nml_error(__FILE__, __LINE__, "CANNOT_GET_ROW"), NULL);
 	r = nml_mat_new(1, m->cols);
 	ft_memcpy(r->data[0], m->data[row], m->cols * sizeof(*r->data[0]));

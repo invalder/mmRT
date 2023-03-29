@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:34:33 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/26 13:57:57 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/03/28 22:11:10 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # include "get_next_line.h"
 # include "mlx.h"
 
-# define WIDTH				1920
-# define HEIGHT				1080
+# define WIDTH				1024
+# define HEIGHT				768
 
 # define PI					3.14
 

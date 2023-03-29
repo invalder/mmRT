@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   nml_mat_rnd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:36:47 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/26 22:07:32 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/03/27 12:45:25 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
+/// @brief Create random matrix rows x cols within boundaries min and max
+/// @param num_rows
+/// @param num_cols
+/// @param min
+/// @param max
+/// @return
 t_nml_mat	*nml_mat_rnd(unsigned int num_rows, unsigned int num_cols, \
 	float min, float max)
 {

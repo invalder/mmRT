@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:33:41 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/26 20:53:41 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/03/28 23:11:38 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	ft_printf("Hello World\n");
 	t_vars			data;
 	t_draw			draw;
-	// t_map_meta		meta;
+
 	static t_handle	handy;
 
 	// if (argc != 2)

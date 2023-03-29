@@ -40,7 +40,7 @@ SRCS =	miniRT.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: $(NAME) | pre
 
 $(NAME):	$(addprefix $(OBJ_DIR),$(OBJS))
 		@make -C $(LIB_DIR) --silent

@@ -1,47 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nml_mat_equal.c                                    :+:      :+:    :+:   */
+/*   nml_mat_smult.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/26 21:56:44 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/27 12:49:35 by nnakarac         ###   ########.fr       */
+/*   Created: 2023/03/28 13:08:47 by nnakarac          #+#    #+#             */
+/*   Updated: 2023/03/29 11:11:20 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
-/// @brief Matrices dimension equality checker
-/// @param m1 Matrix 1
-/// @param m2 Matrix 2
+/// @brief Multiply all value in matrix m with num
+/// and return new multiplied matrix
+/// @param m
+/// @param num
 /// @return
-int	nml_mat_eqdim(t_nml_mat *m1, t_nml_mat *m2)
+t_nml_mat	*nml_mat_smult(t_nml_mat *m, float num)
 {
-	return ((m1->cols == m2->cols) && (m1->rows == m2->rows));
+	t_nml_mat	*r;
+
+	r = nml_mat_cp(m);
+	nml_mat_smult_r(r, num);
+	return (r);
 }
 
-/// @brief Matrices identical checker
-/// @param m1 Matrix 1
-/// @param m2 Matrix 2
-/// @param tolerance Acceptable tolerance
+/// @brief Multiply all value in matrix m with num
+/// @param m
+/// @param num
 /// @return
-int	nml_mat_eq(t_nml_mat *m1, t_nml_mat *m2, float tolerance)
+int	nml_mat_smult_r(t_nml_mat *m, float num)
 {
 	unsigned int	i;
 	unsigned int	j;
 
 	i = 0;
 	j = 0;
-	if (!nml_mat_eqdim(m1, m2))
-		return (0);
-	while (i < m1->rows)
+	while (i < m->rows)
 	{
 		j = 0;
-		while (j < m1->cols)
+		while (j < m->cols)
 		{
-			if (fabs(m1->data[i][j] - m2->data[i][j]) > tolerance)
-				return (0);
+			m->data[i][j] *= num;
 			j++;
 		}
 		i++;
