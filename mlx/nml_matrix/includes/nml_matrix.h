@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   nml_matrix.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:32:44 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/29 11:46:54 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:47:52 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int			nml_mat_col_swap_r(t_nml_mat *m, unsigned int col1, \
 t_nml_mat	*nml_mat_row_addrow(t_nml_mat *m, unsigned int where, \
 	unsigned int row, float mult);
 
-t_nml_mat	*nml_mat_row_addrow_r(t_nml_mat *m, unsigned int where, \
+int			nml_mat_row_addrow_r(t_nml_mat *m, unsigned int where, \
 	unsigned int row, float mult);
 
 #endif

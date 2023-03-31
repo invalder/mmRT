@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   nml_row_addrow.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:28:28 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/29 11:46:23 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:47:08 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_nml_mat	*nml_mat_row_addrow(t_nml_mat *m, unsigned int where, \
 	return (r);
 }
 
-t_nml_mat	*nml_mat_row_addrow_r(t_nml_mat *m, unsigned int where, \
+int	nml_mat_row_addrow_r(t_nml_mat *m, unsigned int where, \
 	unsigned int row, float mult)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	if (where >= m->rows || row >= m->rows)
