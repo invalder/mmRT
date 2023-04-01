@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+         #
+#    By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 22:45:00 by nnakarac          #+#    #+#              #
-#    Updated: 2023/03/29 11:28:40 by nnakarac         ###   ########.fr        #
+#    Updated: 2023/04/01 02:59:25 by nnakarac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,12 @@ NML = nml_util.c \
 	nml_col_row_rem.c \
 	nml_col_row_swap.c \
 	nml_row_addrow.c \
+	nml_mat_cath.c \
+	nml_mat_catv.c \
+	nml_mat_add.c \
+	nml_mat_sub.c \
+	nml_mat_dot.c \
+	nml_mat_transp.c \
 
 SRCS = $(NML)
 OBJS = $(SRCS:.c=.o)

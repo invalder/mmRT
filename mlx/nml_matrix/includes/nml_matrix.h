@@ -6,7 +6,7 @@
 /*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:32:44 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/31 18:47:52 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/01 02:59:11 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,16 @@ t_nml_mat	*nml_mat_row_addrow(t_nml_mat *m, unsigned int where, \
 
 int			nml_mat_row_addrow_r(t_nml_mat *m, unsigned int where, \
 	unsigned int row, float mult);
+
+t_nml_mat	*nml_mat_cath(unsigned int mnum, t_nml_mat **marr);
+t_nml_mat	*nml_mat_catv(unsigned int mnum, t_nml_mat **marr);
+
+t_nml_mat	*nml_mat_add(t_nml_mat *m1, t_nml_mat *m2);
+int			nml_mat_add_r(t_nml_mat *m1, t_nml_mat *m2);
+
+t_nml_mat	*nml_mat_sub(t_nml_mat *m1, t_nml_mat *m2);
+int			nml_mat_sub_r(t_nml_mat *m1, t_nml_mat *m2);
+
+t_nml_mat	*nml_mat_dot(t_nml_mat *m1, t_nml_mat *m2);
 
 #endif
