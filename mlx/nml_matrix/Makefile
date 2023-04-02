@@ -6,7 +6,7 @@
 #    By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 22:45:00 by nnakarac          #+#    #+#              #
-#    Updated: 2023/04/01 02:59:25 by nnakarac         ###   ########.fr        #
+#    Updated: 2023/04/02 20:14:22 by nnakarac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,10 @@ NML = nml_util.c \
 	nml_mat_sub.c \
 	nml_mat_dot.c \
 	nml_mat_transp.c \
+	nml_mat_trace.c \
+	nml_mat_pivot.c \
+	nml_mat_ref.c \
+	nml_mat_rref.c \
 
 SRCS = $(NML)
 OBJS = $(SRCS:.c=.o)

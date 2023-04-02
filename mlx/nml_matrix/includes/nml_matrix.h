@@ -6,7 +6,7 @@
 /*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:32:44 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/04/01 02:59:11 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:58:55 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "nml_util.h"
 # include "libft.h"
 # include "../../libft/includes/libft.h"
+
+# define NML_MIN_COEF 0.0000000001
 
 typedef struct s_nml_mat
 {
@@ -100,5 +102,16 @@ t_nml_mat	*nml_mat_sub(t_nml_mat *m1, t_nml_mat *m2);
 int			nml_mat_sub_r(t_nml_mat *m1, t_nml_mat *m2);
 
 t_nml_mat	*nml_mat_dot(t_nml_mat *m1, t_nml_mat *m2);
+
+t_nml_mat	*nml_mat_transp(t_nml_mat *m);
+
+float		nml_mat_trace(t_nml_mat *m);
+
+int			nml_mat_pivotidx(t_nml_mat *m, unsigned int col, unsigned int row);
+int			nml_mat_pivotmaxidx(t_nml_mat *m, unsigned int col, \
+	unsigned int row);
+
+t_nml_mat	*nml_mat_ref(t_nml_mat *m);
+t_nml_mat	*nml_mat_rref(t_nml_mat *m);
 
 #endif

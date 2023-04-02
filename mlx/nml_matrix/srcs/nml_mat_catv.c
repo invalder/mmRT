@@ -6,7 +6,7 @@
 /*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 20:01:04 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/31 21:07:33 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/02 21:08:36 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,11 @@ static void	fill_cons_rows(t_nml_mat **marr, t_nml_mat *r)
 /// @brief Matrix row concatination
 /// @param mnum
 /// @param marr
-/// @return
+/// @return New matrix from row concatination result
 t_nml_mat	*nml_mat_catv(unsigned int mnum, t_nml_mat **marr)
 {
 	unsigned int	lcol;
 	unsigned int	nrows;
-	int				crows;
 	t_nml_mat		*r;
 
 	if (mnum == 0)

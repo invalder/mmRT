@@ -1,46 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nml_mat_dot.c                                      :+:      :+:    :+:   */
+/*   nml_mat_rref.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/01 02:29:15 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/04/02 17:20:38 by nnakarac         ###   ########.fr       */
+/*   Created: 2023/04/02 18:38:50 by nnakarac          #+#    #+#             */
+/*   Updated: 2023/04/02 21:24:18 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
-/// @brief Matrix dot product bewteen m1 and m2
-/// @param m1
-/// @param m2
-/// @return New matrix with from dot product result of m1 and m2
-t_nml_mat	*nml_mat_dot(t_nml_mat *m1, t_nml_mat *m2)
+static void	nml_mat_rref_util(t_nml_mat *r, unsigned int i, unsigned int j, \
+	unsigned int k)
+{
+	while (k < r->rows)
+	{
+		if (!(k==i))
+			nml_mat_row_addrow_r(r, k, i, -(r->data[k][j]));
+		k++;
+	}
+}
+
+t_nml_mat *nml_mat_rref(t_nml_mat *m)
 {
 	unsigned int	i;
 	unsigned int	j;
 	unsigned int	k;
+	unsigned int	pivot;
 	t_nml_mat		*r;
 
+	r = nml_mat_cp(m);
+	j = 0;
 	i = 0;
-	if (!(m1->cols == m2->rows))
-		return (nml_error(__FILE__, __LINE__, "CANNOT_MULITPLY"), NULL);
-	r = nml_mat_new(m1->rows, m2->cols);
-	while (i < r->rows)
+	while (j < r->cols && i < r->rows)
 	{
-		j = 0;
-		while (j < r->cols)
+		pivot = nml_mat_pivotmaxidx(r, j, i);
+		if (pivot < 0)
 		{
-			k = 0;
-			while (k < m1->cols)
-			{
-				r->data[i][j] += m1->data[i][k] * m2->data[k][j];
-				k++;
-			}
 			j++;
+			continue ;
 		}
+		if (pivot != i)
+			nml_mat_row_swap_r(r, i, pivot);
+		nml_mat_row_mult_r(r, i, 1/r->data[i][j]);
+		k = 0;
+		nml_mat_rref_util(r, i, j, k);
 		i++;
+		j++;
 	}
 	return (r);
 }

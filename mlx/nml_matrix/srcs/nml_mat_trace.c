@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nml_mat_transp.c                                   :+:      :+:    :+:   */
+/*   nml_mat_trace.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/01 02:59:17 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/04/02 17:18:38 by nnakarac         ###   ########.fr       */
+/*   Created: 2023/04/02 14:53:31 by nnakarac          #+#    #+#             */
+/*   Updated: 2023/04/02 17:23:58 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
-/// @brief Matrix transpose
+/// @brief Matrix Trace
 /// @param m
-/// @return New transposed matrix from m
-t_nml_mat	*nml_mat_transp(t_nml_mat *m)
+/// @return sum of diagonal value or -2147483648 incase matrix is not square
+float	nml_mat_trace(t_nml_mat *m)
 {
-	t_nml_mat		*r;
 	unsigned int	i;
-	unsigned int	j;
+	float			trace;
 
 	i = 0;
-	r = nml_mat_new(m->cols, m->rows);
-	if (r)
+	trace = 0.0f;
+	if (!m->is_square)
+		return (nml_error(__FILE__, __LINE__, "CANNOT_TRACE"), -2147483648);
+	while (i < m->rows)
 	{
-		while (i < r->rows)
-		{
-			j = 0;
-			while (j < r->cols)
-			{
-				r->data[i][j] = m->data[j][i];
-				j++;
-			}
-			i++;
-		}
+		trace += m->data[i][i];
+		i++;
 	}
-	return (r);
+	return (trace);
 }
