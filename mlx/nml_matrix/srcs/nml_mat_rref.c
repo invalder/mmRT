@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   nml_mat_rref.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:38:50 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/04/02 21:24:18 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:03:51 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
-static void	nml_mat_rref_util(t_nml_mat *r, unsigned int i, unsigned int j, \
-	unsigned int k)
+static void	nml_mat_rref_util(t_nml_mat *r, unsigned int i, unsigned int j)
 {
+	unsigned int	k;
+
+	k = 0;
 	while (k < r->rows)
 	{
-		if (!(k==i))
+		if (!(k == i))
 			nml_mat_row_addrow_r(r, k, i, -(r->data[k][j]));
 		k++;
 	}
 }
 
-t_nml_mat *nml_mat_rref(t_nml_mat *m)
+t_nml_mat	*nml_mat_rref(t_nml_mat *m)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -44,9 +46,8 @@ t_nml_mat *nml_mat_rref(t_nml_mat *m)
 		}
 		if (pivot != i)
 			nml_mat_row_swap_r(r, i, pivot);
-		nml_mat_row_mult_r(r, i, 1/r->data[i][j]);
-		k = 0;
-		nml_mat_rref_util(r, i, j, k);
+		nml_mat_row_mult_r(r, i, 1 / r->data[i][j]);
+		nml_mat_rref_util(r, i, j);
 		i++;
 		j++;
 	}

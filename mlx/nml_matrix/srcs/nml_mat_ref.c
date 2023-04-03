@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   nml_mat_ref.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnakarac <nnakarac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:54:19 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/04/02 20:12:12 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:02:33 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nml_matrix.h"
 
-static void	nml_mat_ref_util(t_nml_mat *r, unsigned int i, unsigned int j, \
-	unsigned int k)
+static void	nml_mat_ref_util(t_nml_mat *r, unsigned int i, unsigned int j)
 {
+	unsigned int	k;
+
+	k = i + 1;
 	while (k < r->rows)
 	{
 		if (fabs(r->data[k][j]) > NML_MIN_COEF)
@@ -48,8 +50,7 @@ t_nml_mat	*nml_mat_ref(t_nml_mat *m)
 		if (pivot != i)
 			nml_mat_row_swap_r(r, i, pivot);
 		nml_mat_row_mult_r(r, i, 1 / r->data[i][j]);
-		k = i + 1;
-		nml_mat_ref_util(r, i, j, k);
+		nml_mat_ref_util(r, i, j);
 		i++;
 		j++;
 	}
