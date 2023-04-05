@@ -6,7 +6,7 @@
 #    By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 22:45:00 by nnakarac          #+#    #+#              #
-#    Updated: 2023/04/05 22:09:27 by nnakarac         ###   ########.fr        #
+#    Updated: 2023/04/05 22:19:59 by nnakarac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ NML = nml_util.c \
 	nml_mat_det.c \
 	nml_mat_lu_get.c \
 	nml_ls_solvefwd.c \
-	nml_ls_solvebwd.c \
+	nml_ls_solvebck.c \
 
 SRCS = $(NML)
 OBJS = $(SRCS:.c=.o)
