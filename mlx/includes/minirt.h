@@ -6,12 +6,12 @@
 /*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:34:33 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/03/28 22:11:10 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:20:03 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __MINIRT_H__
-# define __MINIRT_H__
+#ifndef MINIRT_H
+# define MINIRT_H
 
 # define _GNU_SOURCE
 
@@ -23,10 +23,10 @@
 # include "get_next_line.h"
 # include "mlx.h"
 
-# define WIDTH				1024
-# define HEIGHT				768
+# define WIDTH	1024
+# define HEIGHT	768
 
-# define PI					3.14
+# define PI		3.14
 
 enum e_key {
 	ON_KEYDOWN = 2,

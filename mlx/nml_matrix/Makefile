@@ -6,7 +6,7 @@
 #    By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 22:45:00 by nnakarac          #+#    #+#              #
-#    Updated: 2023/04/03 18:44:05 by nnakarac         ###   ########.fr        #
+#    Updated: 2023/04/05 22:09:27 by nnakarac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,14 @@ NML = nml_util.c \
 	nml_mat_ref.c \
 	nml_mat_rref.c \
 	nml_mat_absmaxr.c \
+	nml_mat_lup_new.c \
+	nml_mat_lup_free.c \
+	nml_mat_lup_print.c \
+	nml_mat_lup_solve.c \
+	nml_mat_det.c \
+	nml_mat_lu_get.c \
+	nml_ls_solvefwd.c \
+	nml_ls_solvebwd.c \
 
 SRCS = $(NML)
 OBJS = $(SRCS:.c=.o)

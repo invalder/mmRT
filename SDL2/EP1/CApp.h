@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   CApp.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/04 11:04:12 by nnakarac          #+#    #+#             */
+/*   Updated: 2023/04/04 11:05:17 by nnakarac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* ***********************************************************
 	CApp.h
 
@@ -20,32 +32,32 @@
 
 ***********************************************************/
 
-#ifndef CAPP_H
-#define CAPP_H
+#ifndef CAPP_HPP
+# define CAPP_HPP
 
-#include "SDL.h"
-#include "./qbRayTrace/qbImage.hpp"
+# include "SDL.h"
+# include "./qbRayTrace/qbImage.hpp"
 
 class CApp
 {
 	public:
-		CApp();
+	CApp(void);
 
-		int OnExecute();
-		bool OnInit();
-		void OnEvent(SDL_Event *event);
-		void OnLoop();
-		void OnRender();
-		void OnExit();
+	int	OnExecute(void);
+	bool	OnInit(void);
+	void	OnEvent(SDL_Event *event);
+	void	OnLoop(void);
+	void	OnRender(void);
+	void	OnExit(void);
 
 	private:
 		// An instance of qbImage to store the image.
-		qbImage m_image;
+		qbImage			m_image;
 
 		// SDL2 stuff.
-		bool isRunning;
-		SDL_Window *pWindow;
-		SDL_Renderer *pRenderer;
+		bool			isRunning;
+		SDL_Window 		*pWindow;
+		SDL_Renderer	*pRenderer;
 
 };
 

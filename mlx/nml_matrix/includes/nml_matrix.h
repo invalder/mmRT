@@ -6,7 +6,7 @@
 /*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:32:44 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/04/03 17:20:54 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:46:30 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,7 @@ t_nml_mat		*nml_mat_rref(t_nml_mat *m);
 // LUP Decomposition
 int				nml_mat_absmaxr(t_nml_mat *m, unsigned int k);
 
-t_nml_mat_lup	*nml_mat_lup_new(nml_mat *l, nml_mat *u, nml_mat *p, \
+t_nml_mat_lup	*nml_mat_lup_new(t_nml_mat *l, t_nml_mat *u, t_nml_mat *p, \
 	unsigned int num_permutations);
 
 void			nml_mat_lup_free(t_nml_mat_lup *lu);
@@ -213,7 +213,7 @@ t_nml_mat		*nml_mat_inv(t_nml_mat_lup *m);
 t_nml_mat		*nml_ls_solvefwd(t_nml_mat *low_triang, t_nml_mat *b);
 t_nml_mat		*nml_ls_solvebck(t_nml_mat *upper_triang, t_nml_mat *b);
 
-t_nml_mat		*nml_ls_solve(t_nml_mat_lup *lup, t_nml_mat* b);
+t_nml_mat		*nml_ls_solve(t_nml_mat_lup *lup, t_nml_mat *b);
 
 // ****************************************************************************
 //
@@ -221,7 +221,7 @@ t_nml_mat		*nml_ls_solve(t_nml_mat_lup *lup, t_nml_mat* b);
 //
 // ****************************************************************************
 float			nml_vect_dot(t_nml_mat *m1, unsigned int m1col, \
-	t_nml_mat *m2, unsigned m2col);
+	t_nml_mat *m2, unsigned int m2col);
 
 t_nml_mat		*nml_mat_l2norm(t_nml_mat *m);
 float			nml_mat_col_l2norm(t_nml_mat *m1, unsigned int j);

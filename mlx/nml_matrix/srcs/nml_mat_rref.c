@@ -6,7 +6,7 @@
 /*   By: nnakarac <nnakarac@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:38:50 by nnakarac          #+#    #+#             */
-/*   Updated: 2023/04/03 17:03:51 by nnakarac         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:46:58 by nnakarac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ t_nml_mat	*nml_mat_rref(t_nml_mat *m)
 {
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	k;
 	unsigned int	pivot;
 	t_nml_mat		*r;
 
